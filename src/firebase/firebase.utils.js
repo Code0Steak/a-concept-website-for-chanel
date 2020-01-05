@@ -46,7 +46,7 @@ const provider = new firebase.auth.GoogleAuthProvider();
 
 //provider.setCustomParameters({ prompt: 'select_account' });
 
-export const signInWithGoogle = 
+export const signInWithGoogle = () => {
   
   firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
@@ -66,7 +66,7 @@ export const signInWithGoogle =
     var credential = error.credential;
     console.log(errorCode,errorMessage,credential);
     // ...
-  })
+  })}
 
 
 export default firebase;
