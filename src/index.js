@@ -7,6 +7,8 @@ import * as serviceWorker from './serviceWorker';
 
 import {Provider} from 'react-redux';
 
-ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
+import store from './redux/store'
+
+ReactDOM.render(<Provider store = {store}><BrowserRouter><App /></BrowserRouter></Provider>, document.getElementById('root'));
 
 serviceWorker.unregister();
