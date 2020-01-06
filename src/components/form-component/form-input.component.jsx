@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function FormInput({handleChange, label, ...otherProps}) {
+export default function FormInput({handelChange, label, ...otherProps}) {
     return (
         <div className = "group">
-            <input type="text" className ="form-input" onchange = {handelChange} {...otherProps} />
+            <input type="text" className ="form-input" onChange = {handelChange} {...otherProps} />
 
             {
                 label ? 
