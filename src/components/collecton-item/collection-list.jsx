@@ -8,7 +8,7 @@ export default function CollectionList({title,items }) {
     return (
         <div>
            <div><h1>{title}</h1></div> 
-           <div> {items.map(({id, name,imageUrl, price})=>(<CollectionItem id = {id} name = {name} price = {price} imageUrl = {imageUrl}/>))}</div>
+           <div> {items.map((item)=>(<CollectionItem id = {item.id} item = {item}/>))}</div>
         </div>
     )
 }
