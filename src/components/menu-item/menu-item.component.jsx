@@ -1,22 +1,24 @@
-import React from 'react'
-import {withRouter} from "react-router-dom"
-import "./menu-item.styles.scss"
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-function MenuItem({title, img, size, history}) {
-    
+import './menu-item.styles.scss';
 
-    return (
-        <div className="menu-item" style = {{backgroundImage: `url(${img})`}} className={`${size} menu-item`}>
-                    <div className="content">
-    <h1 className="title">{title}</h1>
-                        <span className="subtitle">Shop Now</span>
-                    </div>
-                </div>
-
-        // The with-history function allows us to pass the component with the 3 basic Router props!!
-        //So there is no need of passing in a history prop through each of the parent component
-        //This prevents props tunneling/drilling
-    )
-}  
+const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
+  <div
+    className={`${size} menu-item`}
+    onClick={() => history.push(`${match.url}${linkUrl}`)}
+  >
+    <div
+      className='background-image'
+      style={{
+        backgroundImage: `url(${imageUrl})`
+      }}
+    />
+    <div className='content'>
+      <h1 className='title'>{title.toUpperCase()}</h1>
+      <span className='subtitle'>SHOP NOW</span>
+    </div>
+  </div>
+);
 
 export default withRouter(MenuItem);
