@@ -16,7 +16,7 @@ const StripeCheckoutButton = ({price}) => {
             billingAddress
             shippingAddress
             image = 'https://www.chanel.com/img/logo_chanel.svg'
-            description = {`Your total id Rs. ${price}`}
+            description = {`Total amount Rs. ${price}`}
             amount = {costForStripe}
             panelLabel = 'Pay Now'
             token = {onToken}
